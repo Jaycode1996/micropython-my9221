@@ -1,12 +1,28 @@
+/**
+* MakeCode editor extension for single or multiple MAX7219 8x8 matrix LED modules
+* by Jay
+*/
+
+/**
+ * My9221 block
+ */
+//% weight=100 color=#006d19 icon="\uf00a" block="MY9221"
 namespace MY9221{
     let clk_flag = 0
 
+    /**
+    * initialization all LEDs and configuration Pins
+    */
+    //% blockId="MY9221_init"
+    //% block="init"
     export function init() {
         pins.digitalWritePin(DigitalPin.P5, 0)
         pins.digitalWritePin(DigitalPin.P8, 0)
         let clk_flag = 0
     }
 
+    //% blockId="MY9221_sendLED"
+    //% block="sendLED state %state"
     export function sendLED(state:any) {
         for (let i = 0; i < 12; i++) {
             if (state&0x0001) {
@@ -19,6 +35,8 @@ namespace MY9221{
          }
     }
 
+    //% blockId="MY9221_send16bitsData"
+    //% block="send16bitsData data %data"
     export function send16bitsData(data: number) {
         for (let i = 0; i < 16; i++) { 
         if (data & 0x8000) {
@@ -44,6 +62,8 @@ namespace MY9221{
         }      
     }
 
+    //% blockId="MY9221_latchData"
+    //% block="latchData"
     export function latchData():void {
         let latch_flag = 0
         pins.digitalWritePin(DigitalPin.P5, 0)
