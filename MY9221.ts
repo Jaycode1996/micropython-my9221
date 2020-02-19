@@ -22,7 +22,7 @@ namespace MY9221{
     }
 
     //% blockId="MY9221_sendLED"
-    //% block="sendLED state %state"
+    //% block="sendLED %state"
     export function sendLED(state:any) {
         for (let i = 0; i < 12; i++) {
             if (state&0x0001) {
@@ -36,7 +36,7 @@ namespace MY9221{
     }
 
     //% blockId="MY9221_send16bitsData"
-    //% block="send16bitsData data %data"
+    //% block="send16bitsData %data"
     export function send16bitsData(data: number) {
         for (let i = 0; i < 16; i++) { 
         if (data & 0x8000) {
