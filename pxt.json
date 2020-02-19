@@ -1,0 +1,23 @@
+{
+    "name": "MY9221",
+    "version": "0.0.0",
+    "description": "Led Bar",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "README.md",
+        "enums.d.ts",
+        "MY9221.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
+    "license": "MIT"
+}
